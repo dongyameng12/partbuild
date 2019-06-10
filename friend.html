@@ -10,9 +10,57 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/jquery-1.10.1.min.js"></script>
     <script src="js/fastclick.js"></script>
+    <script src="js/imgLoader.js"></script>
+    <script>
+        imgLoader([
+            'images/bg.png',
+            'images/boot.png',
+            'images/close.png',
+            'images/fri_home_01.png',
+            'images/fri_home_02.png',
+            'images/fri_home_03.png',
+            'images/home_01.png',
+            'images/home_02.png',
+            'images/home_btn.png',
+            'images/main_01.png',
+            'images/main_02.png',
+            'images/main_03.png',
+            'images/main_li_l.png',
+            'images/main_li_r.png',
+            'images/rule_01.png',
+            'images/rule_02.png',
+            'images/share_01.png',
+            'images/star_bling.png',
+            'images/star_hui.png',
+            'images/tc_01.png',
+            'images/tc_02.png',
+            'images/tc_03.png',
+            'images/topic_01.png',
+            'images/topic_02.png',
+            'images/topic_03.png',
+            'images/topic_04.png',
+            'images/tp_err.png',
+            'images/tp_right.png'
+        ], function (percentage) {
+            var percentT = percentage * 100;
+            $('.loader_info').html('Loading ' + (parseInt(percentT)) + '%');
+            $('.loader_progress')[0].style.width = percentT + '%';
+            if (percentage == 1) {
+                $('.loader').remove();
+                $('.fri_home').show()
+            }
+        });
+    </script>
 </head>
 <body>
     <button style="position:absolute;z-index:300;top:.5rem;font-weight:bolder;" href="#" class="test1 clickios">已参加活动</button>
+    <!--loading-->
+    <section class="loader">
+        <div class="loader_info"></div>
+        <div>
+            <div class="loader_progress"></div>
+        </div>
+    </section>
     <section class="fri_home">
         <div>
             <div></div>
