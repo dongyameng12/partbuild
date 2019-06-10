@@ -51,11 +51,11 @@
                 if (test =='1') {
                     $('.home').show();
                 } else {
-                    var first_login = localStorage.getItem('firstLoading')
+                    var first_login = localStorage.getItem('firstLoading2')
                     if(first_login){
                         $('.main').show()
                     }else{
-                        localStorage.setItem('firstLoading', true)
+                        localStorage.setItem('firstLoading2', true)
                         $('.home').show();
                     }
                 }
