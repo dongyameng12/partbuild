@@ -65,6 +65,7 @@ body section.home > div:nth-child(1) {
   background: url('../images/home_01.png') no-repeat;
   background-size: cover;
   position: relative;
+  z-index: 1;
 }
 html section.home > div:nth-child(1) > a,
 body section.home > div:nth-child(1) > a {
@@ -88,6 +89,8 @@ body section.home > div:nth-child(2) {
   background: url('../images/home_02.png') no-repeat;
   background-size: cover;
   margin: .23rem auto 0;
+  position: relative;
+  z-index: 1;
 }
 html section.home > div:nth-child(3),
 body section.home > div:nth-child(3) {
@@ -502,7 +505,7 @@ body section.main > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) {
 html section.main > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > ul,
 body section.main > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > ul {
   width: 6rem;
-  height: 1.46rem;
+  height: 2rem;
   overflow-y: scroll;
 }
 html section.main > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > ul > li,
