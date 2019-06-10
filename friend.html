@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>北京移动</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/fastclick.js"></script>
+</head>
+<body>
+    <button style="position:absolute;z-index:300;top:.5rem;font-weight:bolder;" href="#" class="test1 clickios">已参加活动</button>
+    <section class="fri_home">
+        <div>
+            <div></div>
+            <a href="javascript:void(0);" class="rule">活动规则</a>
+        </div>
+        <div>
+            <div> 
+                <p>您的好友<span class="friend_nick">XXXXXXXXXXXXXXXXXXXX</span>,</p>
+                <p>邀请您参加庆建党98周年活动 </p>
+                <p>帮助他点亮星星</p>
+                <p>有机会抽取<span> 7.1GB</span> 流量哦～</p>
+            </div>
+            <a href="javascript:void(0);" class="light_star"></a>
+        </div>
+        <div></div>
+    </section>
+    <section class="pop fri_tc">
+        <div>
+            <div>  
+                <p>您以为好友</p>
+                <p>成功点亮一颗星星哦～</p>
+                <p> 当8颗星星被全部点亮后还有</p>
+                <p>机会抽取<span> 7.1GB</span></p>
+                <p>快来参加吧！</p>
+            </div>
+        </div>
+        <a href="javascript:;" class="close join" id="join">参加</a>
+    </section>
+      <!-- 活动规则 -->
+    <section class="tc_rule">
+        <div></div>
+        <div>
+            <div>
+                <ul>
+                    <li>活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则</li>
+                    <li>活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则</li>
+                    <li>活动规则活动规则</li>
+                    <li>活动规则活动规则</li>
+                    <li>活动规则活动规则</li>
+                    <li>活动规则活动规则</li>
+                    <li>活动规则活动规则</li>
+                    <li>活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则</li>
+                    <li>活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则</li>
+                </ul>
+            </div>
+            <a href="javascript:void(0);" class="rule_btn">确定</a>
+        </div>
+        <div></div>
+    </section>
+    <!-- 遮罩层 -->
+    <section class="mask" id="mask"></section>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</body>
+</html>
+<script src="js/friend.js"></script>
