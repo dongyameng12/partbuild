@@ -68,8 +68,8 @@ html,body{
                     }
                 }
                 &:nth-child(2){
-                    width: 4.58rem;
-                    height: .33rem;
+                    width: 4.96rem;
+                    height: .4rem;
                     background: url('../images/home_02.png') no-repeat;
                     background-size: cover;
                     margin: .23rem auto 0;
@@ -311,40 +311,52 @@ html,body{
                       
                     }
                     >div{
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        right: 0;
-                        margin: auto;
-                        width: 5.66rem;
-                        height: 2.48rem;
-                        font-size: .28rem;
-                        >div{
-                            &:nth-child(1){
-                                text-align: center;
-                                color: #455fa9;
-                                >i{
-                                    padding: .18rem;
-                                    >span{
-                                        font-size: .37rem;
-                                        color: #ffe1ad;
-                                    }
-                                }
-                               
-                            }
-                            &:nth-child(2){
-                                color: #cd3e3e;
-                                box-sizing: border-box;
-                                padding:.43rem 0 0 .27rem;
-                                >p{
-                                    &:nth-child(4){
+                        &:nth-child(2){
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            width: 5.66rem;
+                            height: 2.48rem;
+                            font-size: .28rem;
+                            >div{
+                                &:nth-child(1){
+                                    text-align: center;
+                                    color: #455fa9;
+                                    >i{
+                                        padding: .18rem;
                                         >span{
                                             font-size: .37rem;
-                                            color: #fedca9;
+                                            color: #ffe1ad;
+                                        }
+                                    }
+                                   
+                                }
+                                &:nth-child(2){
+                                    color: #cd3e3e;
+                                    box-sizing: border-box;
+                                    padding:.43rem 0 0 .27rem;
+                                    >p{
+                                        &:nth-child(4){
+                                            >span{
+                                                font-size: .37rem;
+                                                color: #fedca9;
+                                            }
                                         }
                                     }
                                 }
+                              
                             }
+                        }
+                        &:nth-child(3){
+                            position: absolute;
+                            bottom: -1.17rem;
+                            right: 0;
+                            width: 2.63rem;
+                            height: 3.2rem;
+                            background: url('../images/hongqi.png') no-repeat;
+                            background-size: cover;
                         }
                     }
                 }
@@ -585,6 +597,8 @@ html,body{
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    position: relative;
+                    z-index: 1;
                     >div{
                         width: 6.75rem;
                         height: 4.36rem;
@@ -618,7 +632,7 @@ html,body{
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
-                    z-index: 2;
+                    z-index: 1;
                     >div{
                         width: 5.88rem;
                         height:3.88rem;
@@ -644,6 +658,7 @@ html,body{
                         height: .82rem;
                         background: url('../images/fri_home_03.png') no-repeat;
                         background-size: cover; 
+                        z-index: 1;
                     }
                 }
                 &:nth-child(3){
@@ -747,12 +762,13 @@ html,body{
             // 异网弹窗1
             &.tc_2{
                 display: none;
-                width: 5.88rem;
+                top: 1rem;
                 height: 5.85rem;
                 >div{
                     margin: 0 auto;
                     &:nth-child(1){
                         text-align: right;
+                        width: 5.88rem; 
                         >a{
                             display: inline-block;
                             width: .65rem;
@@ -808,6 +824,13 @@ html,body{
                             line-height: .6rem;
                             text-align: center;
                         }
+                    }
+                    &:nth-child(4){
+                        width: 7.5rem;
+                        height: 1.6rem;
+                        background: url('../images/last.gif') no-repeat;
+                        background-size: cover;
+                        margin: .6rem auto 0;
                     }
                 }
              
