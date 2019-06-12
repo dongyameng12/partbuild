@@ -237,7 +237,6 @@ body section.topic > div:nth-child(3) > div {
 html section.topic > div:nth-child(3) > div > p,
 body section.topic > div:nth-child(3) > div > p {
   width: 5.66rem;
-  height: 2.12rem;
   font-size: .3rem;
   margin: 0 auto;
   color: #cd3e3e;
@@ -247,7 +246,7 @@ html section.topic > div:nth-child(3) > div > ul,
 body section.topic > div:nth-child(3) > div > ul {
   width: 5.5rem;
   height: 3.27rem;
-  margin: 0 auto;
+  margin: .25rem auto 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
