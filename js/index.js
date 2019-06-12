@@ -167,7 +167,6 @@ $(document).ready(function () {
     // （首页）开始
     $('#start').on('click',function(){
         newData = getNumber(0, 15, 8)
-        debugger
         $('.home').hide()
         problemText();
         choose()
@@ -440,6 +439,23 @@ $(document).ready(function () {
             $('.main').show();
         }
     });
+    // 好友列表
+    function friendList() {
+        var list = [{ 'name': '你的好友猪猪你的好友猪猪1', 'time': 'X月X日', 'count': '点亮一颗星星' },
+        { 'name': '你的好友猪猪你的好友猪猪2', 'time': 'X月X日', 'count': '点亮一颗星星' },
+        { 'name': '你的好友猪猪你的好友猪猪3', 'time': 'X月X日', 'count': '点亮一颗星星' },
+        { 'name': '你的好友猪猪你的好友猪猪5', 'time': 'X月X日', 'count': '点亮一颗星星' },
+        { 'name': '你的好友猪猪你的好友猪猪6', 'time': 'X月X日', 'count': '点亮一颗星星' },
+        { 'name': '你的好友猪猪你的好友猪猪7', 'time': 'X月X日', 'count': '点亮一颗星星' }
+        ]
+        for (var i = 0; i < list.length; i++) {
+            var li = '<li><p class="friend_nick">' + list[i].name + '</p><p>' + list[i].time + '</p><p>' + list[i].count + '</p></li>'
+            $('.friend_list').append(li)
+        }
+    }
+    friendList()
+    // 限制名称字符长度
+    $('.friend_nick').text($('.friend_nick').text().substring(0, 6) + '...')
     // 测试
     $('.test2').on('click', function () {
         $('.test2').css('color', 'red');
