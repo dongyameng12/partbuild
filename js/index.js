@@ -471,7 +471,7 @@ $(document).ready(function () {
     })               
     $('.test6').on('click', function () {
         $('.test6').css('color', 'red');
-        for(i=0; i<8 ; i++){
+        for(i=rightnumArr.length; i<8 ; i++){
             rightnumArr.push('right');
         }
         $('.mian_list').children('li:eq('+(rightnumArr.length-1)+')').css({"width":".61rem","height":".59rem","background-image":"url(images/star_bling.png)"}).prevAll('li').css({"width":".61rem","height":".59rem","background-image":"url(images/star_bling.png)"});
