@@ -330,7 +330,11 @@ $(document).ready(function () {
                 } else {
                     //异网中流量 
                     showMask()
-                    $('.tc_2').show();
+                    if ( $("."+current_clickclass).text() == '点击查看') {
+                        $('.tc_5').show()
+                    } else {
+                        $('.tc_2').show();
+                    }
                 }
             } else {
                 // 未绑定手机号
