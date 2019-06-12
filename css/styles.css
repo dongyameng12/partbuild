@@ -245,7 +245,7 @@ body section.topic > div:nth-child(3) > div > p {
 }
 html section.topic > div:nth-child(3) > div > ul,
 body section.topic > div:nth-child(3) > div > ul {
-  width: 5.4rem;
+  width: 5.5rem;
   height: 3.27rem;
   margin: 0 auto;
   display: flex;
@@ -254,9 +254,9 @@ body section.topic > div:nth-child(3) > div > ul {
 }
 html section.topic > div:nth-child(3) > div > ul > li,
 body section.topic > div:nth-child(3) > div > ul > li {
-  width: 5.4rem;
+  width: 5.5rem;
   height: .6rem;
-  padding-left: .5rem;
+  padding-left: .3rem;
   box-sizing: border-box;
   line-height: .6rem;
   position: relative;

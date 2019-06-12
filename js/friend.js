@@ -34,6 +34,7 @@ $(document).ready(function () {
     })
     // 测试用
     $('.test1').on('click',function(){
+        $('.test1').css('color', 'red');
         firstjoin = false
     })
 })
