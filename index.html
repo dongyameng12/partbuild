@@ -53,8 +53,8 @@
                 if (test ==='1') {
                     $('.home').show();
                 } else {
-                    var first_login = localStorage.getItem('firstLoading2')
-                    if(first_login){
+                    var firstLoading2 = localStorage.getItem('firstLoading2')
+                    if(firstLoading2){
                         $('.main').show()
                     }else{
                         localStorage.setItem('firstLoading2', true)
@@ -70,7 +70,7 @@
     <button style="position:absolute;z-index:300;top:1rem;font-weight:bolder;" href="#" class="test3 clickios">没有绑定用户</button>
     <button style="position:absolute;z-index:300;top:1.5rem;font-weight:bolder;" href="#" class="test4 clickios">异网用户</button>
     <button style="position:absolute;z-index:300;top:2rem;font-weight:bolder;" href="#" class="test5 clickios">恢复首次登陆</button>
-    <button style="position:absolute;z-index:300;top:2rem;font-weight:bolder;" href="#" class="test6 clickios">8颗星星点亮</button>
+    <button style="position:absolute;z-index:300;top:2.5rem;font-weight:bolder;" href="#" class="test6 clickios">8颗星星点亮</button>
     <!--loading-->
     <section class="loader">
         <div class="loader_info"></div>
@@ -153,7 +153,7 @@
         <div>
             <a href="javascript:void(0);" class="rule-btn">活动规则</a>
             <div>
-                <div>[<i>恭喜您答对 <span class="num_rig">X</span> 道题</i> ]</div>
+                <div>[<i>恭喜您答对 <span class="num_rig">0</span> 道题</i> ]</div>
                 <div> 
                     <p>完成答题可以领取小礼盒</p>
                     <p>让好友帮忙点亮下面的星星 </p>
