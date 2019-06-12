@@ -316,8 +316,6 @@ $(document).ready(function () {
     // 点击分享（测试用）
     $('.share').on('click',function(){
         $('.share').hide()
-        rightnumArr.push('right');
-        $('.mian_list').children('li:eq('+(rightnumArr.length-1)+')').css({"width":".61rem","height":".59rem","background-image":"url(images/star_bling.png)"}).prevAll('li').css({"width":".61rem","height":".59rem","background-image":"url(images/star_bling.png)"});
         $('.main').show()
     })
     // 判断关注，绑定等
@@ -331,13 +329,8 @@ $(document).ready(function () {
                     $('.tc_1').show();
                 } else {
                     //异网中流量 
-                    if ($("."+current_clickclass).text() == '点击查看') {
-                        showMask();
-                        $('.tc_5').show()
-                    } else {
-                        showMask();
-                        $('.tc_2').show();
-                    }
+                    showMask()
+                    $('.tc_2').show();
                 }
             } else {
                 // 未绑定手机号
@@ -476,7 +469,13 @@ $(document).ready(function () {
         localStorage.clear();
         window.location.href = "index.html?time=" + ((new Date()).getTime());
     })               
-
+    $('.test6').on('click', function () {
+        $('.test6').css('color', 'red');
+        for(i=0; i<8 ; i++){
+            rightnumArr.push('right');
+        }
+        $('.mian_list').children('li:eq('+(rightnumArr.length-1)+')').css({"width":".61rem","height":".59rem","background-image":"url(images/star_bling.png)"}).prevAll('li').css({"width":".61rem","height":".59rem","background-image":"url(images/star_bling.png)"});
+    });
 });
 //显示遮罩层
 function showMask() {
