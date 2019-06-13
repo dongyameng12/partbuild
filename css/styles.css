@@ -255,7 +255,7 @@ html section.topic > div:nth-child(3) > div > ul > li,
 body section.topic > div:nth-child(3) > div > ul > li {
   width: 5.5rem;
   height: .6rem;
-  padding-left: .3rem;
+  padding-left: .2rem;
   box-sizing: border-box;
   line-height: .6rem;
   position: relative;
