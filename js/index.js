@@ -1,5 +1,4 @@
-﻿//主页（显示）及中途退出
-var firstLoading2 = localStorage.getItem('firstLoading2')
+﻿
 $(document).ready(function () {
     //是否关注公众号
     var attention = true;
