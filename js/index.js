@@ -283,7 +283,6 @@ $(document).ready(function () {
             }
         }
     })
-
     // 主页（抽奖）
     $('.lottory').on("click",function(){
        if($(this).hasClass('lottory_left')){
@@ -353,19 +352,13 @@ $(document).ready(function () {
             //转增
             $('.tc_2').hide();
             $('.tc_3').show();
-            // $(current_clickclass).remmoveClass('cancel')
         } else {
-            //  取消
+            //  关闭
             hideMask();
             $('.tc_2').hide();
-            // 点击取消后加入cancel,用于判断显示那个弹窗
-            // $(current_clickclass).parent('div').children('div:eq(0)').removeClass(current_lihe + 'no').addClass(current_lihe + 'yes');
-            // $(current_clickclass).css('background-color', '#ff746b');
-            // $(current_clickclass).text('点击查看');
-            // $(current_clickclass).addClass('cancel');
         }
     };
-    //异网流量弹窗 1（取消）
+    //异网流量弹窗 1（关闭）
     $('.close2').on('click', function () {
         increase = false;
         Transfcancel();
@@ -408,7 +401,6 @@ $(document).ready(function () {
     function istel(tel) {
         var rtn = false;
         //移动号段验证
-        // var regtel = /^((13[4-9])|(15([0-2]|[7-9]))|(18[2|3|4|7|8])|(178)|(147))[\d]{8}$/;
         var regtel = /^((13[4-9])|(15([0-2]|[7-9]))|(18[2|3|4|7|8])|(17[2|8])|(165)|(147)|198)[\d]{8}$/;
         if (regtel.test(tel)) {
             rtn = true;
@@ -472,7 +464,8 @@ $(document).ready(function () {
         $('.test5').css('color', 'red');
         localStorage.clear();
         window.location.href = "index.html?time=" + ((new Date()).getTime());
-    })               
+    })  
+    //点亮八颗星星  
     $('.test6').on('click', function () {
         $('.test6').css('color', 'red');
         for(i=rightnumArr.length; i<8 ; i++){
