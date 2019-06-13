@@ -36,6 +36,10 @@ $(document).ready(function () {
     $('.test1').on('click',function(){
         $('.test1').css('color', 'red');
         firstjoin = false
+        var firstLoading2 = localStorage.getItem('firstLoading2')
+        if (!firstLoading2) {
+            localStorage.setItem('firstLoading2', true)
+        }
     })
 })
 //显示遮罩层
