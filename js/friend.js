@@ -4,7 +4,7 @@ $(function () {
 })
 $(document).ready(function () {
     // 第一次参加（默认）
-    var firstjoin = true
+    var firstjoin = false
     // 限制名称字符长度
     $('.friend_nick').text( $('.friend_nick').text().substring(0,6)+'...')
     // 点亮星星
@@ -35,7 +35,7 @@ $(document).ready(function () {
     // 测试用
     $('.test1').on('click',function(){
         $('.test1').css('color', 'red');
-        firstjoin = false
+        firstjoin = true
     })
 })
 //显示遮罩层

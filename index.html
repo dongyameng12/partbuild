@@ -61,13 +61,11 @@
                 $('.loader').remove();
                 var test = getUrlParms('test')
                 if (test) {
-                    $('.home').show();
+                    $('.main').show()
                 } else {
-                    var firstLoading2 = localStorage.getItem('firstLoading2')
                     if(firstLoading2){
-                        $('.main').show()
+                        $('.main').show();
                     }else{
-                        localStorage.setItem('firstLoading2', true)
                         $('.home').show();
                     }
                 }
