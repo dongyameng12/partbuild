@@ -4,7 +4,7 @@ $(function () {
 })
 $(document).ready(function () {
     // 第一次参加（默认）
-    var firstjoin = false
+    var firstjoin = true
     // 限制名称字符长度
     $('.friend_nick').text( $('.friend_nick').text().substring(0,6)+'...')
     // 点亮星星
@@ -27,15 +27,15 @@ $(document).ready(function () {
     });
     $('#join').click(function () {
         if (firstjoin) {
-            window.location.href="index.html?test=true";
-        } else {
             window.location.href="index.html?time="+((new Date()).getTime());
+        } else {
+            window.location.href="index.html?test=true";
         }
     })
     // 测试用
     $('.test1').on('click',function(){
         $('.test1').css('color', 'red');
-        firstjoin = true
+        firstjoin = false
     })
 })
 //显示遮罩层
