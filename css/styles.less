@@ -554,7 +554,16 @@ html,body{
                             color: #cd3e3e;
                             >li{
                                 line-height: .5rem;
+                                text-align: justify;
+                                &:nth-child(1),&:nth-child(2),&:nth-child(3){
+                                    >p{
+                                        &:nth-child(1){
+                                            font-size: .28rem;
+                                        }
+                                    }
+                                }
                             }
+                        
                         }
                     }
                     >a{

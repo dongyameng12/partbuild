@@ -17,8 +17,9 @@ $(document).ready(function () {
         $('.fri_home').hide();
         $('.tc_rule').show()
     })
-    $('.rule_btn').on('click',function(){
-
+    $('.rule-back').on('click',function(){
+        $('.tc_rule').hide();
+        $('.fri_home').show()
     })
      //关闭
      $('.close').on('click', function () {
