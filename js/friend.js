@@ -26,6 +26,7 @@ $(document).ready(function () {
         hideMask();
     });
     $('#join').click(function () {
+        localStorage.clear();
         if (firstjoin) {
             window.location.href="index.html?time="+((new Date()).getTime());
         } else {
