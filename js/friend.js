@@ -26,11 +26,10 @@ $(document).ready(function () {
         hideMask();
     });
     $('#join').click(function () {
-        localStorage.clear();
         if (firstjoin) {
-            window.location.href="index.html?time="+((new Date()).getTime());
-        } else {
             window.location.href="index.html?test=true";
+        } else {
+            window.location.href="index.html?time="+((new Date()).getTime());
         }
     })
     // 测试用
