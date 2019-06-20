@@ -1,23 +1,16 @@
 ﻿
-// 本网跳出链接后返回
-var acm_left = localStorage.getItem('acm_left')
-var acm_right = localStorage.getItem('acm_right')
-// 异网跳出链接后返回
-var ayi_left = localStorage.getItem('ayi_left')
-var ayi_right = localStorage.getItem('ayi_right')
-// 八颗星星
-var all_start = localStorage.getItem('all_start')
-// 左边
-if (acm_left||ayi_left) {
-    $('.lottory_left').text('点击查看')
-}
-// 右边
-if ((acm_right||ayi_right)&&all_start) {
-    $('.lottory_right').text('点击查看')
-}
+
 $(document).ready(function () {
     //是否关注公众号
     var attention = true;
+
+    // 判断星星是否都点亮
+    var all_start
+    var acm_left
+    var acm_right
+    var ayi_left
+    var ayi_right
+
     // 是否绑定手机号
     var binding = true;
     // 本网，异网用户(默认本网)
@@ -32,6 +25,9 @@ $(document).ready(function () {
     var rightnumArr = []
     // 领取奖励后当前class
     var current_clickclass
+    // 随机数
+    var lott_data = parseInt(Math.random() * 3) 
+
     // 用于存放题目
     var topicArr = [
         // 0
@@ -179,6 +175,17 @@ $(document).ready(function () {
             right: 'B'
         }
     ]
+   
+    // 本网链接及图片
+    var image_url = {
+        "five_dollar_bill":{"background-image":'url(images/ban_wuyuan.jpg)','href':'http://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7858699aca01b75f&redirect_uri=http%3A%2F%2Fserviceimg.bmcc.com.cn%2Fweixin%2Fredirect%2FdispenseRequest.action&response_type=code&scope=snsapi_base&state=hxyhq5Y#wechat_redirect'},
+        "free_call":{'background-image':'url(images/ban_ziyou.jpg)','href':'http://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7858699aca01b75f&redirect_uri=http%3A%2F%2Fserviceimg.bmcc.com.cn%2Fweixin%2Fredirect%2FdispenseRequest.action&response_type=code&scope=snsapi_base&state=cydsfzyhf58#wechat_redirect'},
+        "enjoy_package":{'background-image':'url(images/ban_beixiang.png)','href':'https://mp.weixin.qq.com/s/UBjo8H4D7Gdgogy-kOOp8w'},
+        "handroom_activity":{'background-image':'url(images/ban_cm_shouting.jpg)','href':'http://sc.bj.chinamobile.com/activity/loading/loading.html?actname=coupon'},
+        "ten_dollar_bill":{'background-image':'url(images/ban_shiyuan.jpg)','href': 'http://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7858699aca01b75f&redirect_uri=http%3A%2F%2Fserviceimg.bmcc.com.cn%2Fweixin%2Fredirect%2FdispenseRequest.action&response_type=code&scope=snsapi_base&state=hxyhq10Y#wechat_redirect'},
+        "traffic_assured":{'background-image':'url(images/ban_fangxin.png)','href': 'https://mp.weixin.qq.com/s/K6W3CaZajWdDb4WgBxJUXQ'}
+    }
+    getLocalstory()
     // （首页）开始
     $('#start').on('click', function () {
         newData = getNumber(0, 15, 8)
@@ -302,28 +309,11 @@ $(document).ready(function () {
     })
     // 主页（抽奖）
     // 不同链接
-    var lott_data  = lott_data = parseInt(Math.random() * 3) 
     $('.lottory').on("click", function () {
         if ($(this).hasClass('lottory_left')) {
             current_clickclass = 'main_left'
             // 本网
-            switch (lott_data) {
-                // 5元5GB欢享券
-                case 0:
-                    $('.a_cm_bg').css('background-image', 'url(images/ban_wuyuan.jpg)');
-                    $('.a_cm').attr('href', ' http://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7858699aca01b75f&redirect_uri=http%3A%2F%2Fserviceimg.bmcc.com.cn%2Fweixin%2Fredirect%2FdispenseRequest.action&response_type=code&scope=snsapi_base&state=hxyhq5Y#wechat_redirect')
-                    break;
-                case 1:
-                    //自由话费 
-                    $('.a_cm_bg').css('background-image', 'url(images/ban_ziyou.jpg)');
-                    $('.a_cm').attr('href', 'http://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7858699aca01b75f&redirect_uri=http%3A%2F%2Fserviceimg.bmcc.com.cn%2Fweixin%2Fredirect%2FdispenseRequest.action&response_type=code&scope=snsapi_base&state=cydsfzyhf58#wechat_redirect')
-                    break;
-                case 2:
-                    // 倍享包
-                    $('.a_cm_bg').css('background-image', 'url(images/ban_beixiang.png)');
-                    $('.a_cm').attr('href', 'https://mp.weixin.qq.com/s/UBjo8H4D7Gdgogy-kOOp8w')
-                    break;
-            }
+            getLeftPic(lott_data,'left')
             // 异网
             // 移动王卡
             $('.a_yi_bg').css('background-image', 'url(images/ban_wangka.png)');
@@ -336,23 +326,7 @@ $(document).ready(function () {
             } else {
                 current_clickclass = 'main_right'
                 // 本网
-                switch (lott_data) {
-                    // 手厅活动 
-                    case 0:
-                        $('.a_cm_bg').css('background-image', 'url(images/ban_cm_shouting.jpg)');
-                        $('.a_cm').attr('href', 'http://sc.bj.chinamobile.com/activity/loading/loading.html?actname=coupon')
-                        break;
-                    case 1:
-                        //10元10GB欢享券 
-                        $('.a_cm_bg').css('background-image', 'url(images/ban_shiyuan.jpg)');
-                        $('.a_cm').attr('href', ' http://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7858699aca01b75f&redirect_uri=http%3A%2F%2Fserviceimg.bmcc.com.cn%2Fweixin%2Fredirect%2FdispenseRequest.action&response_type=code&scope=snsapi_base&state=hxyhq10Y#wechat_redirect')
-                        break;
-                    case 2:
-                        // 流量放心用  
-                        $('.a_cm_bg').css('background-image', 'url(images/ban_fangxin.png)');
-                        $('.a_cm').attr('href', 'https://mp.weixin.qq.com/s/K6W3CaZajWdDb4WgBxJUXQ')
-                        break;
-                }
+                getLeftPic(lott_data,'right')
                 // 异网
                 // 无限卡
                 $('.a_yi_bg').css('background-image', 'url(images/ban_wuxianka.png)');
@@ -362,6 +336,80 @@ $(document).ready(function () {
         }
         $(this).addClass(current_clickclass)
     })
+    // 本网链接
+    function getLeftPic (lott_data,left_right) {
+        if (left_right == 'left') {
+            switch (lott_data) {
+                // 5元5GB欢享券
+                case 0:
+                    $('.a_cm_bg').css('background-image', image_url['five_dollar_bill']['background-image']);
+                    $('.a_cm').attr('href',image_url['five_dollar_bill']['href'])
+                    break;
+                case 1:
+                    //自由话费 
+                    $('.a_cm_bg').css('background-image', image_url['free_call']['background-image']);
+                    $('.a_cm').attr('href',image_url['free_call']['href'])
+                    break;
+                case 2:
+                    // 倍享包
+                    $('.a_cm_bg').css('background-image', image_url['enjoy_package']['background-image']);
+                    $('.a_cm').attr('href',image_url['enjoy_package']['href'])
+                    break;
+            }
+        } else {
+            switch (lott_data) {
+                // 手厅活动 
+                case 0:
+                    $('.a_cm_bg').css('background-image', image_url['handroom_activity']['background-image']);
+                    $('.a_cm').attr('href',image_url['handroom_activity']['href'])
+                    break;
+                case 1:
+                    //10元10GB欢享券 
+                    $('.a_cm_bg').css('background-image', image_url['ten_dollar_bill']['background-image']);
+                    $('.a_cm').attr('href',image_url['ten_dollar_bill']['href'])
+                    break;
+                case 2:
+                    // 流量放心用  
+                    $('.a_cm_bg').css('background-image', image_url['traffic_assured']['background-image']);
+                    $('.a_cm').attr('href',image_url['traffic_assured']['href'])
+                    break;
+            }
+        }
+    }
+
+    // 获取本地缓存，判断图片及文字描述
+    function getLocalstory () {
+        // 本网跳出链接后返回
+        acm_left = JSON.parse(localStorage.getItem('acm_left')) 
+        acm_right = JSON.parse(localStorage.getItem('acm_right'))
+        // 八颗星星
+        all_start = localStorage.getItem('all_start')
+        if (acm_left) {
+            lott_data = acm_left['lott_data']
+            // 左边
+            if (acm_left['status']) {
+                $('.lottory_left').text('点击查看')
+                getLeftPic (lott_data,'left')
+            }
+        } 
+        if (acm_right) {
+            lott_data = acm_right['lott_data']
+            // 右边
+            if (acm_right['status']&&all_start) {
+                $('.lottory_right').text('点击查看')
+                getLeftPic (lott_data,'right')
+            }
+        }
+        // 异网
+        ayi_left = localStorage.getItem('ayi_left')
+        ayi_right = localStorage.getItem('ayi_right')
+        if (ayi_left) {
+            $('.lottory_left').text('点击查看')
+        }
+        if (ayi_right&&all_start) {
+            $('.lottory_right').text('点击查看')
+        }
+    }
 
     // 获取奖励的最后一步
     $('.close3').on('click', function () {
@@ -375,11 +423,11 @@ $(document).ready(function () {
         // 左边本网
         if (acm_img.includes('ban_wuyuan')||acm_img.includes('ban_ziyou')||acm_img.includes('ban_beixiang')){
             if (acm_left == null) {
-                localStorage.setItem('acm_left', true)
+                localStorage.setItem('acm_left', JSON.stringify({'status':true,'lott_data':lott_data}))
             }
         }else{
             if (acm_right == null) {
-                localStorage.setItem('acm_right', true)
+                localStorage.setItem('acm_right', JSON.stringify({'status':true,'lott_data':lott_data}))
             }
         }
     })
@@ -548,8 +596,9 @@ $(document).ready(function () {
         binding = false;
     });
     $('.test4').on('click', function () {
-        $('.lottory ').text('领取奖励')
         $('.test4').css('color', 'red');
+        $('.lottory_left').addClass('main_left')
+        $('.lottory_right').addClass('main_right')
         CM = false;
     });
     // 恢复首次登陆
